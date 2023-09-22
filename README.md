@@ -262,13 +262,12 @@ open /home/gitpod/.terraform.d/credentials.tfrc.json
 Provide the following code (replace your token in the file):
 
 ```json
-terraform {
-  cloud {
-    organization = "Terraform-bootcamp-2023"
-
-    workspaces {
-      name = "Terra-house-1"
+{
+  "credentials": {
+    "app.terraform.io": {
+      "token": "your-terraform-cloud-api-token"
     }
   }
 }
 ```
+We have automated this workaround with the following bash script [bind/generate_trfc/credentials](bin/generate_tfrc_credentials)
