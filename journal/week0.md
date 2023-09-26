@@ -1,34 +1,38 @@
 # Terraform Beginner Bootcamp 2023 - Week 0
 
 
-* [Semantic Versioning :mage:](#semantic-versioning-mage)
-   * [Install the Terraform CLI](#install-the-terraform-cli)
-      + [Considerations with the Terraform CLI changes](#considerations-with-the-terraform-cli-changes)
-      + [Consideration for Linux distribution](#consideration-for-linux-distribution)
-      + [Refactoring into Bash Scripts](#refactoring-into-bash-scripts)
-      + [Shebang Considerations](#shebang-considerations)
-         - [Execution Considerations](#execution-considerations)
-         - [Linux Permissions Considerations](#linux-permissions-considerations)
-      + [Github Lifecycle (Before, Init, Command)](#github-lifecycle-before-init-command)
-      + [Working  Env Vars](#working-env-vars)
-         - [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
-         - [Printing Vars](#printing-vars)
-         - [Scoping of Env Vars](#scoping-of-env-vars)
-         - [Persisting Env Vars in Gitpod](#persisting-env-vars-in-gitpod)
-      + [AWS CLI Installation](#aws-cli-installation)
+- [Semantic Versioning](#semantic-versioning)
+- [Install the Terraform CLI](#install-the-terraform-cli)
+  * [Considerations with the Terraform CLI changes](#considerations-with-the-terraform-cli-changes)
+  * [Consideration for Linux distribution](#consideration-for-linux-distribution)
+  * [Refactoring into Bash Scripts](#refactoring-into-bash-scripts)
+    + [Shebang Considerations](#shebang-considerations)
+    + [Execution Considerations](#execution-considerations)
+    + [Linux Permissions Considerations](#linux-permissions-considerations)
+- [Gitpod Lifecycle - Before Init Command](#gitpod-lifecycle---before-init-command)
+- [Working Env Vars](#working-env-vars)
+  * [env command](#env-command)
+  * [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
+  * [Printing Vars](#printing-vars)
+  * [Scoping of Env Vars](#scoping-of-env-vars)
+  * [Persisting Env Vars in Gitpod](#persisting-env-vars-in-gitpod)
+- [AWS CLI Installation](#aws-cli-installation)
 - [Terraform Basics](#terraform-basics)
-      + [Terraform Registry](#terraform-registry)
-      + [Terraform Console](#terraform-console)
-         - [Terraform Init](#terraform-init)
-         - [Terraform Plan](#terraform-plan)
-         - [Terraform Apply](#terraform-apply)
-         - [Terraform Destory](#terraform-destory)
-         - [Terraform Lock Files](#terraform-lock-files)
-         - [Terraform State Files](#terraform-state-files)
-         - [Terraform Directory](#terraform-directory)
-   * [Issue with Terraform cloud login and Gitpod Workspace](#issue-with-terraform-cloud-login-and-gitpod-workspace)
+  * [Terraform Registry](#terraform-registry)
+  * [Terraform Console](#terraform-console)
+    + [Terraform Init](#terraform-init)
+    + [Terraform Plan](#terraform-plan)
+    + [Terraform Apply](#terraform-apply)
+    + [Terraform Destory](#terraform-destory)
+    + [Terraform Lock Files](#terraform-lock-files)
+    + [Terraform State Files](#terraform-state-files)
+    + [Terraform Directory](#terraform-directory)
+- [Issue with Terraform cloud login and Gitpod Workspace](#issue-with-terraform-cloud-login-and-gitpod-workspace)
 
-## Semantic Versioning :mage:
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
+## Semantic Versioning 
 
 This project is going to utilize semantic versioning for its tagging.
 [senver.org](https://semver.org/)
@@ -86,7 +90,7 @@ This bash script is located here [./bin/install_terraform_cli](./bin/install_ter
 - This allow us an easier to debug and execute manually Terraform CLI install
 - This will allow better portablity for other projects that need to install Terrfaform CLI.
 
-### Shebang Considerations
+#### Shebang Considerations
 
 A Shebang (pronouced sha-bang) tells the bash script what program that will interpret the scripts. eg.
 
@@ -124,19 +128,21 @@ chmod 744 ./bin/install_terraform_cli
 
 https://en.wikipedia.org/wiki/Chmod
 
-### Github Lifecycle (Before, Init, Command)
+## Gitpod Lifecycle - Before Init Command
 
 We need to be careful when using the Init because it will rerun if we restart an existing workspace.
 
 https://www.gitpod.io/docs/configure/workspaces/tasks
 
-### Working  Env Vars
+## Working Env Vars
+
+### env command
 
 We can list out all Enviroment Variables (Env Vars) using the `env` command
 
 We can filter specific env vars using grep eg. `env | grep AWS__`
 
-#### Setting and Unsetting Env Vars
+### Setting and Unsetting Env Vars
 
 In the terminal we can set using `export HELLO='world'`
 
@@ -157,17 +163,17 @@ HELLO='world'
 echo $HELLO
 ```
 
-#### Printing Vars
+### Printing Vars
 
 We can print an env var using echo eg. `echo $HELLO`
 
-#### Scoping of Env Vars
+### Scoping of Env Vars
 
 When you open up new bash terminals in VScode it will not be aware of env vars that you have set in another window.
 
 If you want to Env Vars to persist across all future bash terminals that are open you need to set env vars in your bash profile. eg. `.bash_profile`
 
-#### Persisting Env Vars in Gitpod
+### Persisting Env Vars in Gitpod
 
 We can persist env vars into gitpod by storing them in Gitpod Secrets Storage.
 
@@ -179,7 +185,7 @@ ALL future workspaces launched will set the env vars for all bash terminals open
 
 You can also set en vars in the `.gitpod.yml` but this can only contain non-senstive env vars.
 
-### AWS CLI Installation
+## AWS CLI Installation
 
 AWS CLI is installed for this project via bash script [`./bin/install_aws_cli'](./bin/install_awscli)
 
@@ -204,7 +210,7 @@ If it is successful you should see a json payload return that looks like this:
 
 We'll need to generate AWS CLI credential from IAM user in order to use the AWS CLI
 
-# Terraform Basics
+## Terraform Basics
 
 ### Terraform Registry
 
