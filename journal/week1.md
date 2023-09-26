@@ -36,7 +36,7 @@ We can use the `-var` flag to set an input variable or override a variable in th
 
 ### Var-file flag
 
-- TODO: document this flag funcionality for terraform cloud
+- TODO: document this flag 
 
 ### terraform.tfvars
 
