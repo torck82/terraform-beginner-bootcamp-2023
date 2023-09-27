@@ -19,6 +19,3 @@ validation {
     error_message = "The bucket_name must be between 3 and 63 characters in length, can contain only lowercase letters, numbers, hyphens, and periods, must start and end with a lowercase letter or number, and cannot be formatted as IP addresses."
   }
 }
-
-
- 
