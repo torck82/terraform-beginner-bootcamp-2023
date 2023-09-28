@@ -12,6 +12,16 @@ Remote delete a tag
 ```
 git push --delete origin tagname
 ```
+
+Checkout the commit that you want to retag. Grab the sha from your Github history.
+
+```sh
+git chechout <sha>
+get tag M.M.P
+git push --tags
+git checkout main
+```
+
 ## Root Module Structure
 
 Our root module structure is as follows:
