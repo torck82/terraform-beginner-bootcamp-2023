@@ -115,3 +115,51 @@ module "terrahouse_aws" {
    
 }
 ```
+
+## Consideration when using ChatGPT to write Terraform
+
+LLMs such as Chatgpt may not be trained on the lasted documenation or information about terraform
+
+It may likely produce older example that could be deprecate. Often affecting providers.
+
+## Working with files in Terraform
+
+### Filee xists function
+
+This is to check if the file exist
+
+```tf
+variable "error_html_filepath" {
+  description = "Path to the error.html file"
+  type        = string
+}
+    validation {
+    condition     = fileexists(var.error_html_filepath)
+    error_message = "The specified error.html path is not valid or the file does not exist."
+  
+}
+```
+[Filexists](https://developer.hashicorp.com/terraform/language/functions/fileexists)
+
+### FileMD5
+
+Check if the file changed and update the file
+
+[check if the file changed](https://developer.hashicorp.com/terraform/language/functions/md5)
+
+
+### Path Variable
+
+In terraform there is a special vaiable called `path` that allows us to reference local paths:
+- path.module = get the path for the current module
+- path.root = get the path for the root of the project
+[Speical Path Variable](https://developer.hashicorp.com/terraform/language/expressions/references)
+
+```tf
+resource "aws_s3_object" "error_html" {
+  bucket = aws_s3_bucket.web_bucket.bucket
+  key    = "index.html"
+  source = ${path.root}/public/index.html
+
+}
+```
