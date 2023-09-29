@@ -185,3 +185,36 @@ resource "aws_s3_object" "error_html" {
 
 }
 ```
+
+## Terraform Locals
+
+Locals allows us to define local variables.
+It can be very useful when we need to transform data into another format and have it referenced as a variable
+
+[local values](https://developer.hashicorp.com/terraform/language/values/locals)
+
+### Terraform Data Source
+
+This allow use to source data from cloud resources.
+
+This is useful when we want to reference cloud resources without inporting them.
+
+
+```tf
+data "aws_caller_identity" "current" {}
+
+output "account_id" {
+  value = data.aws_caller_identity.current.account_id
+}
+```
+
+[Data Source](https://developer.hashicorp.com/terraform/language/data-sources)
+
+## Working with JSON
+ 
+
+ ```tf
+ > jsonencode({"hello"="world"})
+{"hello":"world"}
+```
+ []jasonencode](https://developer.hashicorp.com/terraform/language/functions/jsonencode)
