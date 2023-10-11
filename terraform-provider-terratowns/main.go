@@ -4,7 +4,6 @@ package main
 
 // fmt is short format, it contains functions for formatted I/O.
 import (
-<<<<<<< HEAD
 	"bytes"
 	"context"
 	"encoding/json"
@@ -12,7 +11,6 @@ import (
 	"log"
 	"fmt"
 	"github.com/google/uuid"
-
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
@@ -68,7 +66,6 @@ func Provider() *schema.Provider {
 	return p
 }
 
-<<<<<<< HEAD
 func validateUUID(v interface{}, k string) (ws []string, errors []error) {
 	log.Print("validateUUID:start")
 	value := v.(string)
@@ -80,7 +77,6 @@ func validateUUID(v interface{}, k string) (ws []string, errors []error) {
 }
 
 func providerConfigure(p *schema.Provider) schema.ConfigureContextFunc {
-
 	return func(ctx context.Context, d *schema.ResourceData) (interface{}, diag.Diagnostics ) {
 		log.Print("providerConfigure:start")
 		config := Config{
@@ -100,7 +96,6 @@ func Resource() *schema.Resource {
 		ReadContext: resourceHouseRead,
 		UpdateContext: resourceHouseUpdate,
 		DeleteContext: resourceHouseDelete,
-<<<<<<< HEAD
 		Schema: map[string]*schema.Schema{
 			"name": {
 				Type: schema.TypeString,
@@ -128,14 +123,11 @@ func Resource() *schema.Resource {
 				Description: "The content version of the home",
 			},
 		},
-
-
 	}
 	log.Print("Resource:start")
 	return resource
 }
 
-<<<<<<< HEAD
 func resourceHouseCreate(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
 	log.Print("resourceHouseCreate:start")
 	var diags diag.Diagnostics
@@ -333,3 +325,4 @@ func resourceHouseDelete(ctx context.Context, d *schema.ResourceData, m interfac
 
 	log.Print("resourceHouseDelete:end")
 	return diags
+}
