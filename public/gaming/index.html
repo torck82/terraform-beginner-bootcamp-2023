@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaming Images</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Gaming Legends</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f3f4f6;
+            background: linear-gradient(120deg, #5f27cd, #e84393);
+            color: #eee;
             margin: 0;
             padding: 0;
         }
 
+        h1 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
         .image-container {
             display: flex;
-            justify-content: center; /* Center images horizontally */
-            gap: 20px; /* Spacing between images */
-            padding: 40px 20px; /* Padding around the container */
-            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 20px;
+            flex-wrap: wrap;
         }
 
         .image-box {
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            overflow: hidden; 
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            overflow: hidden;
             width: 300px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s; /* Transition for hover effect */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .image-box:hover {
-            transform: scale(1.05); /* Zoom effect on hover */
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
         }
 
         .image-box img {
@@ -40,27 +51,68 @@
         }
 
         .description {
-            background-color: #f9f9f9;
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 10px;
             text-align: center;
-            font-size: 16px;
-            font-weight: 700; /* Bold font for description */
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .story {
+            width: 80%;
+            margin: 20px auto;
+            padding: 30px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .story p {
+            line-height: 1.7;
+            font-size: 18px;
+            font-weight: 500;
         }
     </style>
 </head>
+
 <body>
 
-<div class="image-container">
-    <div class="image-box">
-        <img src="/assets/gaming1.jpg" alt="Gaming 1" />
-        <div class="description">Gaming Image 1 Description</div>
+    <h1>The Encounter of Legends</h1>
+
+    <div class="story">
+        <p>Amidst the echoing corridors of the digital realm, legends whispered of two ultimate gamers...</p>
     </div>
 
-    <div class="image-box">
-        <img src="/assets/gaming2.jpg" alt="Gaming 2" />
-        <div class="description">Gaming Image 2 Description</div>
+    <div class="image-container">
+        <div class="image-box">
+            <img src="/assets/gaming1.jpg" alt="Gaming 1" />
+            <div class="description">Gaming Image 1 Description</div>
+        </div>
+
+        <div class="image-box">
+            <img src="/assets/gaming2.jpg" alt="Gaming 2" />
+            <div class="description">Gaming Image 2 Description</div>
+        </div>
+
+        <!-- Diablo 4 Image Box -->
+        <div class="image-box">
+            <img src="/assets/diablo4.jpg" alt="Diablo 4" />
+            <div class="description">
+                Diablo 4: Echoes in Eternity. In the depths of the realm, a new threat emerged. Journey into a world where the lines between good and evil blur.
+            </div>
+        </div>
     </div>
-</div>
+
+    <h1>Diablo 4: Echoes in Eternity</h1>
+
+    <div class="story">
+        <p>In the depths of the realm, where darkness consumed all light, a new threat emerged...</p>
+        <p>"Diablo 4" takes players into the very heart of the realm of shadows...</p>
+        <p>The ancient city of Lumeris, once a beacon of hope...</p>
+        <p>As the realms merge, time distorts. Familiar faces from the past...</p>
+        <p>"Diablo 4" promises a journey that will challenge not only...</p>
+    </div>
 
 </body>
-</html>
+
+</html

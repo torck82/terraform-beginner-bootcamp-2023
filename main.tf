@@ -68,6 +68,6 @@ I don't have much time to spend on this bootcamp so, I'm going to keep it simple
 DESCRIPTION
   #domain_name = module.home_gaming.domain_name
   domain_name = module.home_gaming_hosting.domain_name
-  town = "Gamer's-Grotto"
+  town = "gamers-grotto"
   content_version = 1
 } 
