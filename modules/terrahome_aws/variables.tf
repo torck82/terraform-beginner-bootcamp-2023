@@ -20,28 +20,11 @@ validation {
 #   }
 # }
 
-variable "index_html_filepath" {
-  description = "Path to the index.html file"
+variable "public_path" {
+  description = "The file path for the public directory"
   type        = string
-
-  validation {
-    condition     = fileexists(var.index_html_filepath)
-    error_message = "The specified index.html path is not valid or the file does not exist."
-}
 }
  
-
-variable "error_html_filepath" {
-  description = "Path to the error.html file"
-  type        = string
-
-    validation {
-    condition     = fileexists(var.error_html_filepath)
-    error_message = "The specified error.html path is not valid or the file does not exist."
-  
-}
-}
-
 variable "content_version" {
   description = "Version number for content. Must be a positive integer starting at 1."
   type        = number
@@ -52,7 +35,3 @@ variable "content_version" {
   }
 }
 
-variable "assets_path" {
-  description = "Path to assets folder"
-  type = string
-}
